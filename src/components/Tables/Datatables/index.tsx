@@ -3,18 +3,18 @@ import './styles.css';
 
 
 function Datatables() {
-  const { servers, handleChangeChecked } = useContextServers();
+  const { servers, handleChangeChecked, OrderBy } = useContextServers();
 
   return (
     <table className="table-databases">
       <thead> 
         <tr>
-          <th>Select</th>
-          <th>Hostname</th>
-          <th>Memória</th>
-          <th>vCPUs</th>
-          <th>Disco</th>
-          <th>IP</th>
+          <th onClick={() => OrderBy('select')}>Select</th>
+          <th onClick={() => OrderBy('hostname')}>Hostname</th>
+          <th onClick={() => OrderBy('memory')}>Memória</th>
+          <th onClick={() => OrderBy('vcpus')}>vCPUs</th>
+          <th onClick={() => OrderBy('disk')}>Disco</th>
+          <th onClick={() => OrderBy('ip')}>IP</th>
         </tr>
       </thead>
       <tbody>

@@ -11,7 +11,10 @@ interface ServerContextProps {
   servers: ServerProps[];
   handleChangeChecked: (value: ServerProps) => void;
   handleSetServers: (value: ServerProps[]) => void;
+  OrderBy: (value: OrderByValues) => void;
 }
+
+export type OrderByValues = 'hostname' | 'memory' | 'vcpus' | 'disk' | 'ip' | 'select';
 
 
 const inifialStateSummary = {
@@ -66,8 +69,40 @@ export function ServerProvider({ children }:ServerProviderProps) {
     setServers(serversUpdate);
   }
 
+  function OrderBy(value : OrderByValues) {
+    let orderedServers = [...servers]
+
+    switch (value) {
+      case 'hostname':     
+        orderedServers = servers.sort((a, b) => (a.hostname >= b.hostname ? -1 : 1))
+        setServers([...orderedServers])
+        break;
+      case 'memory':
+        orderedServers = servers.sort((a, b) => (a.configuracao.memoryProvisioned >= b.configuracao.memoryProvisioned ? -1 : 1))
+        setServers([...orderedServers]);
+        break;
+      case 'vcpus':
+        orderedServers= servers.sort((a, b) => (a.configuracao.cpuProvisioned >= b.configuracao.cpuProvisioned ? -1 : 1))
+        setServers([...orderedServers]);
+        break;
+      case 'disk':
+        orderedServers = servers.sort((a, b) => (a.configuracao.totalDiskGB >= b.configuracao.totalDiskGB ? -1 : 1))
+        setServers([...orderedServers]);
+        break;
+      case 'ip':
+        orderedServers = servers.sort((a, b) => (a.ip >= b.ip ? -1 : 1))
+        setServers([...orderedServers]);
+        break;
+        
+        case 'select':
+          orderedServers = servers.sort((a, b) => (a.checked >= b.checked ? -1 : 1))
+        setServers([...orderedServers]);
+        break;
+    }
+  }
+
   return (
-    <ServerContext.Provider value={{ servers, summary, handleChangeChecked, handleSetServers }}>
+    <ServerContext.Provider value={{ servers, summary, handleChangeChecked, handleSetServers, OrderBy }}>
       {children}
     </ServerContext.Provider>
   )
