@@ -3,11 +3,11 @@ Desafio React Database
 
 Rodar os seguintes comandos para executar: 
 
-##yarn
+## yarn
 Baixar as dependências
 
-##yarn server
+## yarn server
 Iniciar o servidor com a API fake
 
-##yarn start
+## yarn start
 Iniciar o servidor do frontend
