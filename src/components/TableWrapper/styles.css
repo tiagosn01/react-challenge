@@ -1,0 +1,22 @@
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  max-width: 1088px;
+  margin-top: 1.2rem;
+  border-radius: 10px;
+}
+
+.table-header {
+  background: #F0F0F0;
+  padding: 0.8rem;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+}
+.table-body {
+  background: #FFF;
+  margin: 1rem;
+  font-family: 'Roboto Mono';
+}

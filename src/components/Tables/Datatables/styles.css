@@ -1,0 +1,26 @@
+.table-databases {
+  border: 1px solid #DDD;
+  border-collapse: collapse;
+  border-radius: 2px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #DDD;
+  width: 100%;
+  font-size: 14px;
+}
+
+.table-databases td {
+  padding: 0.3rem;
+  border: 1px solid #DDD;
+  text-align: center;
+}
+
+.table-databases th {
+  background: #F0F0F0;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #DDD;
+}
+
+.table-databases th:first-child {
+  max-width: 1.6rem;
+}

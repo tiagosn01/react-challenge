@@ -1,0 +1,26 @@
+
+.wrapper-summary-container {
+  border: 1px solid #DDDD;
+  border-radius: 4px;
+}
+.wrapper-summary {
+  display: flex;
+  font-size: 14px; 
+  font-weight: bold;
+}
+.wrapper-summary:not(:last-child) {
+  border-bottom: 1px solid #DDDD;
+}
+
+.wrapper-summary div:first-child {
+  background: #F0F0F0;
+  padding: 0.4rem;
+ 
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+}
+.wrapper-summary div:last-child {
+  padding: 0.4rem;
+  padding-left: 1.4rem;
+}
